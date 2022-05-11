@@ -93,20 +93,5 @@ describe('Authentication Driver', () => {
         }).toThrow(IncorrectPasswordError)
       })
     })
-    describe('GIVEN an incorrect password', () => {
-  
-      const userId = "a random userId"
-      const plainTextPassword = "12345678" 
-      const IncorrectPlainTextPassword = "an incorrect password" 
-      
-      const { authService } = arrangeTestContext(userId, plainTextPassword)
-  
-      it("SHOULD NOT SUCCEED in calling .authenticate() IncorrectPasswordError", () => {
-        
-        expect(() => {
-          authService.authenticate(userId, IncorrectPlainTextPassword) 
-        }).toThrow(IncorrectPasswordError)
-      })
-    })
   })
 }); 
